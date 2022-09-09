@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "http://goalsetterapi:5000",
+  "proxy": "https://goalsetterapi.cyclic.app",
   "allowedHosts": "all",
   "private": true,
   "dependencies": {
