@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FaSignInAlt } from 'react-icons/fa'
+import { FaSignInAlt, FaFileSignature } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -39,6 +39,13 @@ function Login() {
     dispatch(login(userData))
   }
 
+  const fillTestData = () => {
+    setFormData({
+      email: 'test@email.com',
+      password: '123',
+    })
+  }
+
   if (isLoading) return <Spinner />
 
   return (
@@ -48,6 +55,9 @@ function Login() {
           <FaSignInAlt /> Login
         </h1>
         <p>Login and start setting goals</p>
+        <h6 role='presentation' onClick={fillTestData} style={{ cursor: 'pointer' }}>
+          <FaFileSignature /> Fill Test Login
+        </h6>
       </section>
       <section className='form'>
         <form onSubmit={onSubmit}>
